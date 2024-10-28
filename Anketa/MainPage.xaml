@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Anketa.MainPage">
+
+    <StackLayout Padding="20">
+        <Label Text="ФИО" FontSize="20"/>
+        <Entry x:Name="FullNameEntry" Placeholder="Введите ФИО"/>
+
+        <Label Text="Пол" FontSize="20"/>
+        <Picker x:Name="GenderPicker">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Мужчина</x:String>
+                    <x:String>Женщина</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Label Text="Возраст" FontSize="20"/>
+        <Entry x:Name="AgeEntry" Placeholder="Введите возраст" Keyboard="Numeric"/>
+
+        <Label Text="Нужен ли общежитие?" FontSize="20"/>
+        <Switch x:Name="HostelSwitch"/>
+
+        <Label Text="Являетесь старостой?" FontSize="20"/>
+        <Switch x:Name="LeaderSwitch"/>
+
+        <Button Text="Загрузить фото" Clicked="Button_Clicked"/>
+        <Image x:Name="UserPhoto" HeightRequest="200" WidthRequest="200" />
+
+        <Button Text="Сохранить"  Clicked="Button_Clicked_1" />
+        <Label x:Name="StatusLabel" TextColor="Green"/>
+
+        <Label Text="Список записей" FontSize="20"/>
+        <Picker x:Name="RecordsPicker" SelectedIndexChanged="RecordsPicker_SelectedIndexChanged">
+            <Picker.ItemsSource>
+                <!-- Записи будут добавляться сюда -->
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Label x:Name="DetailsLabel" TextColor="Black" />
+    </StackLayout>
+
+</ContentPage>
